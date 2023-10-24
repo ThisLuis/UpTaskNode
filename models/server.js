@@ -16,11 +16,11 @@ class Server {
   }
 
   middlewares(){
+    this.app.use(cors());
+    this.app.use(express.json());
     this.app.set('view engine', 'pug');
     this.app.set('views', path.join(__dirname, '../views'));
-    this.app.use(express.json());
-    this.app.use(cors());
-    this.app.use(express.static('public'))
+    this.app.use(express.static('public'));
   }
 
   routes() {
