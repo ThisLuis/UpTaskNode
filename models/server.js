@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
+const db = require('../config/db');
+require('../models/Projects');
 
 class Server {
 
@@ -13,8 +15,15 @@ class Server {
       projects: '/projects'
     }
 
+    this.connectDB();
     this.middlewares();
     this.routes();
+  }
+
+  connectDB() {
+    db.sync()
+      .then(() => console.log('Connect to db server'))
+      .catch(error => console.log(error))
   }
 
   middlewares(){

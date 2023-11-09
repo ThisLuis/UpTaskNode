@@ -1,6 +1,6 @@
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('uptasknode', 'root', 'root', {
+const db = new Sequelize('uptask', 'root', 'root', {
   host: '127.0.0.1',
   dialect: 'mysql',
   port: 3306,
@@ -15,3 +15,5 @@ const sequelize = new Sequelize('uptasknode', 'root', 'root', {
     idle: 10000
   },
 });
+
+module.exports = db;
