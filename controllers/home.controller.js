@@ -6,10 +6,17 @@ const home = (req, res) => {
 }
 
 const our = (req, res ) => {
-  res.render('our');
+  res.send('our');
+}
+
+const createProject = (req, res) => {
+  res.render('createProject', {
+    title: 'Create Project'
+  })
 }
 
 module.exports = {
   home,
-  our
+  our,
+  createProject
 };

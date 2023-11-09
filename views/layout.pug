@@ -3,12 +3,71 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="/css/app.css")
-    link(rel="stylesheet", href="/css/normalize.css")
+    link(rel="stylesheet", href="../css/app.css")
+    link(rel="stylesheet", href="../css/normalize.css")
     link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet')
-    title #{ title } 1
-  body
+    title #{ title }
+  body scroll=no
+
+    nav.sidebar 
+      header
+        .image-text
+          span.image
+            a(href="/") 
+              img(src='../images/logo.png' alt='')
+          .text.header-text
+            span.name CodingLab
+            span.profession Web Developer
+        i.bx.bx-chevron-right.toggle
+      .menu-bar
+        .menu
+          li.search-box
+            i.bx.bx-search.icon
+            input(type="text" placeholder='Search...')
+          ul.menu-links
+            li.nav-link
+              a(href="/projects/new-project")
+                i.bx.bx-home-alt.icon
+                span.text.nav-text New Project
+            li.nav-link
+              a(href="#")
+                i.bx.bx-bar-chart-alt-2.icon
+                span.text.nav-text Revenue
+            li.nav-link
+              a(href="#")
+                i.bx.bx-bell.icon
+                span.text.nav-text Notifications
+            li.nav-link
+              a(href="#")
+                i.bx.bx-heart.icon
+                span.text.nav-text Likes
+            li.nav-link
+              a(href="#")
+                i.bx.bx-wallet.icon
+                span.text.nav-text Wallets
+        
+        .bottom-content
+
+          li.some
+            a(href="")
+              i.bx.bx-log-out.icon
+              span.text.nav-text Logout
+          li.mode
+            .moon-sun
+              i.bx.bx-moon.icon.moon
+              i.bx.bx-sun.icon.sun
+            
+            span.mode-text.text Dark Mode
+
+            .toggle-switch
+              span.
+    //- div.container
+
     block head
 
-  block footer
-script(src="js/sidebar.js") 
+    
+
+
+
+    script(src="../js/sidebar.js") 
+    block footer

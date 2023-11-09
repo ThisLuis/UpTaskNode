@@ -1,0 +1,36 @@
+extends layout 
+
+block head 
+  div.container-title
+    h1 UpTask: New Project
+    if errors
+      each error in errors
+        p= error.message 
+
+  div.container
+   
+    form(action="new-project" method="POST")
+
+      div.cover-project
+
+
+      div.fields-form
+        .field
+          label(for="name") Name 
+          input(type="text" id="name" name="name" placeholder="Project Name")
+        //- .field
+        //-   label(for="name") Project Name 
+        //-   input(type="text" id="name" name="name" placeholder="Project Name")
+        //- .field
+        //-   label(for="name") Project Name 
+        //-   input(type="text" id="name" name="name" placeholder="Project Name")
+        //- .field
+        //-   label(for="name") Project Name 
+        //-   input(type="text" id="name" name="name" placeholder="Project Name")
+        //- .field
+        //-   label(for="name") Project Name 
+        //-   input(type="text" id="name" name="name" placeholder="Project Name")
+        .field 
+          input(type="submit" value="Enviar")
+
+block footer

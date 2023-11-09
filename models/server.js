@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 class Server {
 
@@ -9,6 +10,7 @@ class Server {
     this.port = process.env.PORT;
     this.paths = {
       home: '/',
+      projects: '/projects'
     }
 
     this.middlewares();
@@ -18,6 +20,7 @@ class Server {
   middlewares(){
     this.app.use(cors());
     this.app.use(express.json());
+    this.app.use(bodyParser.urlencoded({extended: true}))
     this.app.set('view engine', 'pug');
     this.app.set('views', path.join(__dirname, '../views'));
     this.app.use(express.static('public'));
@@ -25,6 +28,7 @@ class Server {
 
   routes() {
     this.app.use(this.paths.home, require('../routes/home.routes'));
+    this.app.use(this.paths.projects, require('../routes/projects.routes'));
   }
 
   run() {
