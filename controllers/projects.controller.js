@@ -1,7 +1,11 @@
+// Global imports
 const { response } = require('express');
 
+// Models
 const Projects = require('../models/Projects');
 
+
+// Logic
 const getForm = (req, res) => {
   res.render('createProject', {
 
@@ -32,6 +36,7 @@ const createProject = async(req, res = response) => {
 
 }
 
+// Exports
 module.exports = {
   createProject,
   getForm
