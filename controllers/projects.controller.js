@@ -4,6 +4,8 @@ const { response } = require('express');
 // Models
 const Projects = require('../models/Projects');
 
+const slug = require('slug');
+
 
 // Logic
 const getForm = (req, res) => {
@@ -28,7 +30,8 @@ const createProject = async(req, res = response) => {
       errors
     })
   } else {
-    const project = await Projects.create({ name });
+    
+    const project = await Projects.create({name});
     res.redirect('/')
       // .then( () => console.log('row was insert'))
       // .catch(err => console.log(err))
