@@ -1,7 +1,11 @@
 
-const home = (req, res) => {
+const Projects = require('../models/Projects');
+
+const home = async(req, res) => {
+  const projects = await Projects.findAll();
   res.render('index', {
-    title: 'Projects'
+    title: 'UpTask: Projects',
+    projects
   })
 }
 
@@ -10,8 +14,8 @@ const our = (req, res ) => {
 }
 
 const createProject = (req, res) => {
-  res.render('createProject', {
-    title: 'Create Project'
+  res.render('index', {
+    title: 'UpTask: Projects'
   })
 }
 

@@ -8,9 +8,11 @@ const slug = require('slug');
 
 
 // Logic
-const getForm = (req, res) => {
+const getForm = async(req, res) => {
+  const projects = await Projects.findAll();
   res.render('createProject', {
-
+    title: 'UpTask - Projects',
+    projects,
   })
 }
 

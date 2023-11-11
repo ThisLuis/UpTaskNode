@@ -5,6 +5,17 @@ block head
   section.home
     .text Dashboard Projects
 
+    div.list-projects
+
+      div.title-projects
+        h2 List Projects
+
+      div.projects
+        ul 
+          if( projects.length)
+            each project in projects
+              li.project-item
+                a(href="#")= project.name 
   block main
 
 block footer

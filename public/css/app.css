@@ -296,6 +296,45 @@ body.dark .switch::before {
   padding: 8px 40px;
 }
 
+.list-projects {
+  width: 95%;
+  border: 1px solid red;
+  margin-left: 2.5rem;
+  height: 85%;
+  background: var(--sidebar-color);
+ 
+}
+
+.projects ul {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap:wrap;
+}
+
+.projects ul .project-item {
+  margin: 10px;
+  list-style: none;
+  padding: 10px 5px;
+  min-width: 15rem;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+}
+
+.projects ul .project-item a {
+  text-decoration: none;
+  margin-top: .5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+
+
 .sidebar.close ~ .home {
   left: 88px;
   width: calc(100% - 88px);
