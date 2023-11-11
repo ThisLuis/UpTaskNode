@@ -15,7 +15,7 @@ block head
           if( projects.length)
             each project in projects
               li.project-item
-                a(href="#")= project.name 
+                a(href=`/projects/${ project.url}`)= project.name 
   block main
 
 block footer

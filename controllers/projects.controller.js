@@ -41,8 +41,15 @@ const createProject = async(req, res = response) => {
 
 }
 
+const projectByUrl = ( req, res = response ) => {
+ res.render('projectById', {
+  title: `Project: ${ req.params.url }`
+ }) 
+}
+
 // Exports
 module.exports = {
   createProject,
-  getForm
+  getForm,
+  projectByUrl
 };
