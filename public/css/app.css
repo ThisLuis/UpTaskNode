@@ -412,3 +412,17 @@ form {
   width: 60%;
   margin: 0 10px;
 }
+
+.container-project {
+  width: 85%;
+  height: 95%;
+  margin-left: 14%;
+  background: var(--sidebar-color);
+ 
+}
+
+.title-project h1{
+  text-align: center;
+  border: 1px solid black;
+  width: 100%;
+}

@@ -41,15 +41,40 @@ const createProject = async(req, res = response) => {
 
 }
 
-const projectByUrl = ( req, res = response ) => {
- res.render('projectById', {
-  title: `Project: ${ req.params.url }`
- }) 
+const projectByUrl = async( req, res = response ) => {
+  const project = await Projects.findOne({
+    where: {
+      url: req.params.url
+    }
+  });
+
+  res.render('projectById', {
+    project,
+    title: 'Create Project'
+  })
+
+}
+
+const projectEdit = async(req, res) => {
+  const projects = await Projects.findAll();
+  const project = await Projects.findOne({
+    where: {
+      id: req.params.id
+    }
+  });
+
+
+  res.render('createProject', {
+    namePage: 'Edit Project: ',
+    projects,
+    project
+  })
 }
 
 // Exports
 module.exports = {
   createProject,
   getForm,
-  projectByUrl
+  projectByUrl,
+  projectEdit
 };

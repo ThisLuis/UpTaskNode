@@ -1,4 +1,6 @@
-extends layout 
+extends layout
+
+include mixins/newProject
 
 block head 
   div.container-title
@@ -8,29 +10,7 @@ block head
         p= error.message 
 
   div.container
-   
-    form(action="new-project" method="POST")
-
-      div.cover-project
-
-
-      div.fields-form
-        .field
-          label(for="name") Name 
-          input(type="text" id="name" name="name" placeholder="Project Name")
-        //- .field
-        //-   label(for="name") Project Name 
-        //-   input(type="text" id="name" name="name" placeholder="Project Name")
-        //- .field
-        //-   label(for="name") Project Name 
-        //-   input(type="text" id="name" name="name" placeholder="Project Name")
-        //- .field
-        //-   label(for="name") Project Name 
-        //-   input(type="text" id="name" name="name" placeholder="Project Name")
-        //- .field
-        //-   label(for="name") Project Name 
-        //-   input(type="text" id="name" name="name" placeholder="Project Name")
-        .field 
-          input(type="submit" value="Enviar")
+    +newProject(project)
+    
 
 block footer

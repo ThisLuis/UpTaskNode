@@ -7,7 +7,8 @@ const modeText = body.querySelector(".mode-text");
 const nav = document.querySelector('nav');
 const container = document.querySelector('.container');
 const containerTitle = document.querySelector('.container-title');
-console.log(sidebar);
+const containerProject = document.querySelector('.container-project')
+console.log(containerProject);
 
 
 toggle.addEventListener("click", () => {
@@ -16,13 +17,17 @@ toggle.addEventListener("click", () => {
   if( nav.matches('.close') ) {
     container.classList.add('ampliar')
     containerTitle.classList.add('ampliar');
+    containerProject.classList.add('ampliar');
     container.classList.remove('reducir')
     containerTitle.classList.remove('reducir');
+    containerProject.classList.remove('reducir')
   } else {
     container.classList.add('reducir')
     containerTitle.classList.add('reducir');
+    containerProject.classList.add('reducir');
     container.classList.remove('ampliar')
     containerTitle.classList.remove('ampliar');
+    containerProject.classList.remove('ampliar')
   }
 
 });

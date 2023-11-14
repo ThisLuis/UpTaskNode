@@ -1,0 +1,13 @@
+mixin newProject(project = {})
+
+  form(action=`new-project/${project.id || ''}` method="POST")
+
+      div.cover-project
+
+
+      div.fields-form
+        .field
+          label(for="name") Name 
+          input(value=project.name type="text" id="name" name="name" placeholder="Project Name")
+        .field 
+          input(type="submit" value=`${project.name ? 'Save Changes':'Create Project'}`)

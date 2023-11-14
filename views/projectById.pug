@@ -1,5 +1,21 @@
 extends layout
 
-block head 
+block head
 
-  h1 hola
+  div.container-project
+
+    div.title-project
+      h1 #{title} #{project.name}
+    
+    div.project-content
+
+      //- TODO Formulario
+
+      //- TODO Listado de pendientes
+
+      //- Acciones que se pueden realizar
+      div.project-actions
+        a(href=`edit/${project.id}` class="button") Edit Project
+        button#remove-project(type="button" class="button-remove") Remove Project 
+  
+  block footer
