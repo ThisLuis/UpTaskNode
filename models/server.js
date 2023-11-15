@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('../config/db');
 require('../models/Projects');
 
+
 class Server {
 
   constructor() {
@@ -31,6 +32,9 @@ class Server {
     this.app.use(express.json());
     this.app.use(bodyParser.urlencoded({extended: true}))
     this.app.set('view engine', 'pug');
+    // this.app.engine('handlebars', Handlebars({
+    //   layoutDir: __dirname + '/views/layouts',
+    // }));
     this.app.set('views', path.join(__dirname, '../views'));
     this.app.use(express.static('public'));
   }
